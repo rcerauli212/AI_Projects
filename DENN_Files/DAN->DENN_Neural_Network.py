@@ -2,7 +2,7 @@ import numpy as np
 from tqdm import tqdm
 import math
 from Dataset import theData
-import ANNMatrices
+import DENNMatrices
 import copy
 
 
@@ -232,7 +232,7 @@ class DANtoANNNeuralNetwork:
         self.exportWeightMatrices = exportWeightMatrices
 
         if exportWeightMatrices:
-            with open("/Users/bALloOniSfOod/Desktop/Achievements/AI-Chess-Project/ANNMatrices.py", "w") as f:
+            with open("/Users/bALloOniSfOod/Desktop/Achievements/AI-Chess-Project/DENNMatrices.py", "w") as f:
                 f.write("matrixList = [\n")
                 f.write("    [\n")
                 for row in self.firstLayerMatrix:
@@ -251,8 +251,8 @@ class DANtoANNNeuralNetwork:
 
     def getOutput(self, inputDataCluster, printWeights=False):
         if self.exportWeightMatrices:
-            firstLayer = ANNMatrices.matrixList[0]
-            secondLayer = ANNMatrices.matrixList[1]
+            firstLayer = DENNMatrices.matrixList[0]
+            secondLayer = DENNMatrices.matrixList[1]
         else:
             firstLayer = self.firstLayerMatrix
             secondLayer = self.secondLayerMatrix
