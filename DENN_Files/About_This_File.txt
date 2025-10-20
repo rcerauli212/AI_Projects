@@ -1,0 +1,51 @@
+DENNs (Deterministic Entropic Neural Networks) are a type of neural network that deterministically fixes W1 to be that of the wiring 
+schematic of a DAN (see other file). Since DANs essentially capture the distribution of the data, It seemed reasonable to try to set 
+W1 to be the distribution of the data itself. With this assumption, a few things come to light regarding this architecture:
+
+
+1. Training is much faster, as only one epoch is needed to solve for the weights of the network. This is because, upon setting W1 to be
+fixed, you can construst a system of equations for the outputs, where the coefficients in the system of equations would represent the 
+weights of the network. This is not solvable with traditional neural networks, as you would have two unknown variables per entry in the
+system of equations, given by: w2 * ( σ(i1 * w1) + b1) + b2. However, by setting W1, each w1 is already known, so the system of equations
+becomes a linear one, and thus can be easily solved for. This will ensure that the network will output the outputs you want, while still 
+maintaining the architecture of traditional neural networks.
+
+2. If data nearly linearly dependent, the DENN will produce wildly unstable weights (i.e. large in magnitude, whether positive 
+or negative) to try to compensate. This is a well-known phenomenon when ANNs are trained on data that is nearly linearly dependent. 
+If it is trained on nicer behaving data (or an appropriate activation function is applied), outputs become much more realistic and 
+similar to ANNs
+
+3. If data is singular (i.e. is linearly dependent), no exact solution exists, which is expected, since this is the equivalent of having 
+two identical data members being expected to output 2 different values
+
+4. Activation functions and biases can be used in the DENNs in the exact same way as in ANNs, which open up all of the techniques 
+of machine learning to fit functions to data onto the DENNs.
+
+5. Via the compression algorithm above, one can also use the compressed DAN as the first matrix in place of the uncompressed DAN, and this
+will give identical results (even for non-training data). And since the compression algorithm does not depend on the output vectors, you 
+can similarly solve for weights for each desired output in the same way
+
+6. If you have a DAN that takes outputs of another DAN as input (for any number of embedded DANs), you can extent this principle by 
+deterministically determining the weights of each hidden weight set and solving for the final weight set. This construction would be 
+isomorphic to a deep neural network, so this construction could potentially explain what is happening when we make deep learning networks
+
+7. I was reading up on if any other models are similar to this construction, and I landed on Extreme Learning Machines (ELMs). These have 
+a similar construction, except instead of deterministically determining the first matrix, they just make it random but fixed. With this 
+construction, they can similarly solve a system of equations (one epoch of training) to find the outputs. I looked into some of their work 
+(albeit briefly) and saw that they mentioned needing a minimum of r rows in their random construction to be able to train it effectively. 
+It is possible that the compression algorithm outlined above could explain why this is the case, as well as provide this "random matrix" to 
+ensure that the ELM can always be trained.
+
+8. Upon training this network on binary data members, with most of the data members being similar to each other and a few being wildly 
+different from the others but similar to each other, the resulting weights correlated between the 2 groups, which lends me to believe 
+that it is possible for the solved weights to  correlate with the information-entropic relationships between the data members. Further 
+testing needs to be shown if this is the case, however if this is indeed the case, it could lead to the conclusion that ANNs are simply 
+navigating the distribution of the dataspace with some loss to ensure continuity.
+
+
+More testing must be done with these networks, however this folder is meant to showcase the construction of these networks as well as give
+some examples of the network in action. While I devised this architecture, its mathematical formalism, and am the primary researcher of its 
+properties as of now, it was heavily inspired by the works of Dr. Anthony Beavers and his DANs (see other file).
+
+
+
