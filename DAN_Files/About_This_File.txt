@@ -1,0 +1,6 @@
+DANs are a type of AI Architecture that takes advantage of the distribution of its training data when being constructed. These models
+are about as simple as they get, as they do not require backpropigation to be trained. On top of this, the wiring schematic dynamically 
+evolves with the addition of new data, no training required. There is much more to be said about these models, for more information, 
+go to this website: https://www.afbeavers.net/drg. The models in this folder are meant to highlight the incredible capabilities of 
+these architectures, despite their simplicity. While the work displayed here is my own, credit to all of the development, research, 
+and philosophical endeavors that went into studying this architecture entirely go to Dr. Anthony Beavers @ Indiana University
