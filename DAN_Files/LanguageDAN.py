@@ -1,4 +1,4 @@
-from DanClass import DAN
+from DANClass import DAN
 
 ### Input random string here ###
 
