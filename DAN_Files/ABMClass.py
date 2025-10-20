@@ -1,4 +1,4 @@
-from DanClass import DAN
+from DANClass import DAN
 import tkinter as tk
 import random as rn
 import math
