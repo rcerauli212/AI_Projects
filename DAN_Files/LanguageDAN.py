@@ -3,6 +3,12 @@
 # See https://www.afbeavers.net/drg for more information
 
 
+# This code is essentially a playground to experiment with initializing DANs and playing around with their functionalities in python.
+# This can be used to construct DANs in excel sheets, as well as to play around with the python DANs in the terminal. The specific code
+# Here is separating a long string of characters into overlapping chunks of size inputNumber and using that dataset as the dataset to 
+# construct the DAN. By inputting english strings, it was shown that archaic language production could occur in the DANs.
+
+
 from DANClass import DAN
 
 ### Input random string here ###
