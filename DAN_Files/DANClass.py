@@ -2,6 +2,14 @@
 # Written by Ryan Cerauli for the DAN Research Program headed by Anthony F. Beavers @ Indiana University. Copyright 2024. 
 # See https://www.afbeavers.net/drg for more information
 
+
+# This code consists of a class where you can construct an arbitrary DAN given a dataset and specific parameters that are desired. 
+# Descriptions of these parameters are given in the __init__ constructor, and from there a DAN will be constructed, either in excel or 
+# in python (or both). The excel parameter will create an excel sheet, and this is generally favored if you would like to be able to 
+# interact directly with a DAN and see how it works, processes information, etc. While the python DAN is good for doing computations.
+# for the remaining files in this folder, python DANs were used for computations. For more information abut DANs, see the above website
+
+
 import pandas as pd
 import xlwings as xw
 import openpyxl
