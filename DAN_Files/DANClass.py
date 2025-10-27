@@ -1,3 +1,7 @@
+
+# Written by Ryan Cerauli for the DAN Research Program headed by Anthony F. Beavers @ Indiana University. Copyright 2024. 
+# See https://www.afbeavers.net/drg for more information
+
 import pandas as pd
 import xlwings as xw
 import openpyxl
