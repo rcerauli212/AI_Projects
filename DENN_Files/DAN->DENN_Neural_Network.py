@@ -2,6 +2,10 @@
 # Written by Ryan Cerauli for the DAN Research Program headed by Anthony F. Beavers @ Indiana University. Copyright 2024. 
 # See https://www.afbeavers.net/drg for more information
 
+
+# This code constructs a DENN. More information about these networks can be found in About_This_File.txt. It takes as input a dataset and 
+# constructs a DENN. 
+
 import numpy as np
 from tqdm import tqdm
 import math
