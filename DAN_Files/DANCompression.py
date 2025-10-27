@@ -6,7 +6,8 @@
 # This is code for a compression algorithm that compresses a binary DAN into a non-binary DAN with the number of rows = rank(DAN). 
 # Since a DAN is wholly constructed via the dataset, this amounts to essentially a PCA compression of the dataset followed by the 
 # introduction of the DAN characteristics in order to gain its functionality as an AI network.
-# NOTE: AI was used extensively in this code out of laziness, the original code for this is in 
+# NOTE: AI was used extensively in this code out of laziness, the original code for this is in DAN->DENN_Neural_Network.py in the 
+# DENN_Files. 
 
 import numpy as np
 from Dataset import theData, categoryDict
