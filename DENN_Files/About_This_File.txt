@@ -1,14 +1,11 @@
-DENNs (Deterministic Entropic Neural Networks) are a type of neural network that deterministically fixes W1 to be that of the wiring 
+DENNs (Deterministically Evolved Neural Networks) are a type of neural network that deterministically fixes W1 to be that of the wiring 
 schematic of a DAN (see other file). Since DANs essentially capture the distribution of the data, It seemed reasonable to try to set 
 W1 to be the distribution of the data itself. With this assumption, a few things come to light regarding this architecture:
 
 
 1. Training is much faster, as only one epoch is needed to solve for the weights of the network. This is because, upon setting W1 to be
 fixed, you can construst a system of equations for the outputs, where the coefficients in the system of equations would represent the 
-weights of the network. This is not solvable with traditional neural networks, as you would have two unknown variables per entry in the
-system of equations, given by: w2 * ( σ(i1 * w1) + b1) + b2. However, by setting W1, each w1 is already known, so the system of equations
-becomes a linear one, and thus can be easily solved for. This will ensure that the network will output the outputs you want, while still 
-maintaining the architecture of traditional neural networks.
+weights of the network. This is not solvable with traditional neural networks, as you would have two (or more, depending on how many layers) unknown variables per entry in the system of equations, given by: w2 * ( σ(i1 * w1) + b1) + b2. However, by setting W1, each w1 is already known, so the system of equations becomes a linear one, and thus can be easily solved for. This will ensure that the network will output the outputs you want, while still maintaining the architecture of traditional neural networks.
 
 2. If data nearly linearly dependent, the DENN will produce wildly unstable weights (i.e. large in magnitude, whether positive 
 or negative) to try to compensate. This is a well-known phenomenon when ANNs are trained on data that is nearly linearly dependent. 
@@ -33,8 +30,7 @@ isomorphic to a deep neural network, so this construction could potentially expl
 a similar construction, except instead of deterministically determining the first matrix, they just make it random but fixed. With this 
 construction, they can similarly solve a system of equations (one epoch of training) to find the outputs. I looked into some of their work 
 (albeit briefly) and saw that they mentioned needing a minimum of r rows in their random construction to be able to train it effectively. 
-It is possible that the compression algorithm outlined above could explain why this is the case, as well as provide this "random matrix" to 
-ensure that the ELM can always be trained.
+It is possible that the compression algorithm outlined in the DANCompression.py file could explain why this is the case, as well as provide this "random matrix" to ensure that the ELM can always be trained.
 
 8. Upon training this network on binary data members, with most of the data members being similar to each other and a few being wildly 
 different from the others but similar to each other, the resulting weights correlated between the 2 groups, which lends me to believe 
