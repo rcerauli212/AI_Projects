@@ -1,3 +1,8 @@
+
+# Written by Ryan Cerauli for the DAN Research Program headed by Anthony F. Beavers @ Indiana University. Copyright 2024. 
+# See https://www.afbeavers.net/drg for more information
+
+
 from DANClass import DAN
 import tkinter as tk
 import random as rn
