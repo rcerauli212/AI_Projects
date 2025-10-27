@@ -3,12 +3,14 @@
 # See https://www.afbeavers.net/drg for more information
 
 
+# This is code for a compression algorithm that compresses a binary DAN into a non-binary DAN with the number of rows = rank(DAN). 
+# Since a DAN is wholly constructed via the dataset, this amounts to essentially a PCA compression of the dataset followed by the 
+# introduction of the DAN characteristics in order to gain its functionality as an AI network.
+# NOTE: AI was used extensively in this code out of laziness, the original code for this is in 
+
 import numpy as np
 from Dataset import theData, categoryDict
 import copy
-
-
-# Note: This file was written almost exclusively with the assistance of AI for readability and out of laziness
 
 
 # --------------------------
