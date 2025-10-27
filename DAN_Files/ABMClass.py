@@ -3,6 +3,14 @@
 # See https://www.afbeavers.net/drg for more information
 
 
+
+# This code is preliminary work in constructing and analyzing an environment with interacting agents. It consists of general classes 
+# with which to construct these agents and their environment, will all agents utilizing the DAN architecture as their "brain". More will
+# be added as further developments in the project come to light and more functionalities are necessary, however as of now, agents can be 
+# made in an environment with a variety of different objects in the environment. 
+
+# NOTE: reward mechanisms must be manually into the code, this will be updated in later iterations of the code to be more easily altered
+
 from DANClass import DAN
 import tkinter as tk
 import random as rn
