@@ -44,4 +44,4 @@ some examples of the network in action. While I devised this architecture, its m
 properties as of now, it was heavily inspired by the works of Dr. Anthony Beavers and his DANs (see other file).
 
 
-
+Upon further review in the literature, DENNs seem to be a binary class of Kernal Ridge Regression models
